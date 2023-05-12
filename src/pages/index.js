@@ -63,8 +63,8 @@ function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Sesuatu??</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Perpisahan Angkatan Ke VI Gita Wirabangsa </title>
+        <link rel="icon" href="/logo.jpg" />
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
