@@ -1,0 +1,19 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "src": "https://media.discordapp.net/attachments/1106536230763638865/1106536852921536513/IMG-20230512-WA0014.jpg",
+      "alt": "Deskripsi gambar 1"
+    },
+    {
+      "id": 2,
+      "src": "/image2.jpg",
+      "alt": "Deskripsi gambar 2"
+    },
+    {
+      "id": 3,
+      "src": "/image3.jpg",
+      "alt": "Deskripsi gambar 3"
+    }
+  ]
+}
