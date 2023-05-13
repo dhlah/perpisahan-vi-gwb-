@@ -40,10 +40,15 @@ export default function Goodbye() {
         <h1 className="text-center mt-5">XI B | VI Generation OF GWB</h1>
       </motion.div>
     </div>
-      <div className="">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3 }}
+      >
         <h1 className="text-center font-bold text-2xl">Keseruan Bersama</h1>
         <KeseruanKelas images={keseruankelas.images}/>
-      </div>
+      </motion.div>
     </div>
   );
 }
