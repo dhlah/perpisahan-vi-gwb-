@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import KeseruanKelas from "@/components/goodbye/KeseruanKelas"
 import keseruankelas from "@/data/keseruankelas"
+import Head from "next/head"
 
 export default function Goodbye() {
   const variants = {
@@ -10,6 +11,10 @@ export default function Goodbye() {
 
   return (
     <div>
+    <Head>
+      <title>Perpisahan GWB VI Gen</title>
+      
+    </Head>
     <div className="mt-64 mb-64 justify-center items-center">
       <motion.div
         variants={variants}
@@ -38,6 +43,7 @@ export default function Goodbye() {
         transition={{ duration: 0.8, delay: 2.5 }}
       >
         <h1 className="text-center mt-5">XI B | VI Generation OF GWB</h1>
+        <link rel="icon" href="/logo.jpg" />
       </motion.div>
     </div>
       <motion.div
