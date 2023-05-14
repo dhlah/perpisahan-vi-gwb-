@@ -1,83 +1,125 @@
-import Head from 'next/head';
 import { motion } from "framer-motion";
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 
+import MomentPerpisahan from "@/components/goodbye/MomentPerpisahan"
+import momentperpisahan from "@/data/momentperpisahan"
 
-function Countdown() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const router = useRouter();
+import Jamran from "@/components/goodbye/Jamran"
+import jamran from "@/data/jamran"
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+import HariGuru from "@/components/goodbye/MomentPerpisahan"
+import hariguru from "@/data/hariguru"
 
-    return () => clearTimeout(timer);
-  });
+import KeseruanKelas from "@/components/goodbye/KeseruanKelas"
+import keseruankelas from "@/data/keseruankelas"
 
-  function calculateTimeLeft() {
-    const targetDate = new Date('May 14, 2023 20:00:00').getTime();
-    const now = new Date().getTime();
-    const timeRemaining = targetDate - now;
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 
-    if (timeRemaining < 0) {
-      router.push('/goodbye'); // Direct ke halaman perpisahan jika countdown selesai
-    }
-
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
-    const seconds = Math.floor((timeRemaining / 1000) % 60);
-
-    return { days, hours, minutes, seconds };
-  }
+export default function Home() {
+  const variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 1 }}
-    >
-      <div className="flex justify-center items-center">
-        <div className="text-4xl font-bold text-black">{timeLeft.days}</div>
-        <div className="text-4xl font-bold text-black mx-2">:</div>
-        <div className="text-4xl font-bold text-black">{timeLeft.hours}</div>
-        <div className="text-4xl font-bold text-black mx-2">:</div>
-        <div className="text-4xl font-bold text-black">{timeLeft.minutes}</div>
-        <div className="text-4xl font-bold text-black mx-2">:</div>
-        <div className="text-4xl font-bold text-black">{timeLeft.seconds}</div>
-      </div>
-    </motion.div>
-  );
-}
-
-function HomePage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Perpisahan Angkatan Ke VI Gita Wirabangsa </title>
-        <link rel="icon" href="/logo.jpg" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold font-black mb-6">
-          {mounted ? <Countdown /> : null}
+    <div>
+    <Head>
+      <title>Perpisahan GWB VI Gen</title>
+      
+    </Head>
+    <div className="mt-64 mb-64 justify-center items-center">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <h1 className="text-2xl text-center">
+          Selamat, Siswa <span className="font-bold">SMP IT Gita Wirabangsa</span> Angkatan Ke 6{" "}
         </h1>
-      </main>
+      </motion.div>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <h1>14 Mei 2023 20:00</h1>
-      </footer>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 1.5 }}
+      >
+        <h1 className="text-4xl text-center font-bold">Atas Kelulusannya!</h1>
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3 }}
+      >
+      <p  className="text-center">Beberapa Foto Untuk Kenang Kenangan</p>
+      </motion.div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3.5 }}
+      >
+        <h1 className="text-center mt-5">XI B | VI Generation OF GWB</h1>
+        <link rel="icon" href="/logo.jpg" />
+      </motion.div>
+    </div>
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3 }}
+      >
+        <h1 className="text-center font-bold text-2xl">Moment Perpisahan</h1>
+        <MomentPerpisahan images={momentperpisahan.images}/>
+      </motion.div>
+      
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3.5 }}
+      >
+        <h1 className="text-center font-bold text-2xl">Masa Jambore Ranting</h1>
+        <Jamran images={jamran.images}/>
+      </motion.div>
+      
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3 }}
+      >
+        <h1 className="text-center font-bold text-2xl">Hari Guru</h1>
+        <HariGuru images={hariguru.images}/>
+      </motion.div>
+      
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3 }}
+      >
+        <h1 className="text-center font-bold text-2xl">Keseruan Bersama</h1>
+        <KeseruanKelas images={keseruankelas.images}/>
+      </motion.div>
+      
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 3.5 }}
+        className="justify-center items-center m-10 flex flex-col"
+      >
+        <h1 className="text-center m-5 mt-10">Selamat Lulus Kawan, Semoga Di Jenjang Selanjutnya Kita Masih Bisa Bersama</h1>
+        <Image src="https://media.discordapp.net/attachments/1106536230763638865/1107178015798087730/IMG-20230414-WA0003.jpg" alt="Foto Bersama" width={200} height={200} className="rounded-md"/>
+      </motion.div>
+      
+      <Link href="/RamanAlizaWedding">
+        <h3 className="text-center bg-red-600 rounded-md font-bold mb-96 mt-30 mx-10 py-3">Jangan Di Klik</h3>
+      </Link>
     </div>
   );
 }
-
-export default HomePage;
