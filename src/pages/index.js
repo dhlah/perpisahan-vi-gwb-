@@ -26,7 +26,7 @@ export default function Home() {
     <div>
     <Head>
       <title>Perpisahan GWB VI Gen</title>
-      
+      <link rel="icon" href="/logo.jpg" />
     </Head>
     <div className="mt-64 mb-64 justify-center items-center">
       <motion.div
@@ -63,7 +63,7 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 3.5 }}
       >
         <h1 className="text-center mt-5">XI B | VI Generation OF GWB</h1>
-        <link rel="icon" href="/logo.jpg" />
+        
       </motion.div>
     </div>
       <motion.div
