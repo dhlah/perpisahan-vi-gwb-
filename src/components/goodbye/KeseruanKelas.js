@@ -11,7 +11,7 @@ export default function KeseruanKelas({ images }) {
       transition={{ duration: 0.8, delay: 1 }}
       key={image.id} 
       className="bg-gray-200 p-3 m-2 rounded-md ">
-          <Image src={image.src} alt={image.alt} width={150} height={150} className="rounded-sm"/>
+          <Image src={image.src} alt="Error Awokawok" width={350} height={350} className="rounded-sm"/>
         </motion.div>
       ))}
     </div>
